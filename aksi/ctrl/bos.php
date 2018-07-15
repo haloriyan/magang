@@ -13,7 +13,7 @@ class bos extends siswa {
 		$r = $this->ambil($q);
 		return $r[$struktur];
 	}
-	public function register($a, $b, $c, $d, $e) {
+	public function register($a, $b, $c, $d) {
 		$q = $this->tabel("bos")
 				  ->tambah([
 				  	"idbos" => $a,
@@ -50,6 +50,10 @@ class bos extends siswa {
 			header("location: ./auth");
 		}
 		return $sesi;
+	}
+	public function change($id, $struktur, $value) {
+		$q = $this->tabel("bos")->ubah([$struktur => $value])->dimana(["idbos" => $id])->eksekusi();
+		return $q;
 	}
 }
 

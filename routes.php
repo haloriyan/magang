@@ -26,6 +26,11 @@ if($role == "" and $bag == "") {
 		}
 	}
 }else {
+	if($role == "lowongan") {
+		$idlowongan = $bag;
+		include 'pages/lowongan.php';
+		exit();
+	}
 	$lokasi = 'pages/'.$role.'/'.$bag.'.php';
 	if(file_exists($lokasi)) {
 		include $lokasi;

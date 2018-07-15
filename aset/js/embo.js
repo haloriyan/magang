@@ -202,3 +202,12 @@ function getCookie(cname) {
 	}
 	return ""
 }
+
+function inArray(needle, haystack) {
+	for (var key in haystack) {
+		if (needle === haystack[key]) {
+			return true
+		}
+	}
+	return false
+}

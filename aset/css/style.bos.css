@@ -20,7 +20,7 @@ body { background-color: #ecf0f1; }
 }
 
 .menu {
-	position: absolute;
+	position: fixed;
 	top: 120px;left: 5%;
 	width: 25%;
 	background-color: #fff;

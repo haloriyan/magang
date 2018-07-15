@@ -8,14 +8,41 @@ body {
 	background-color: #fff;
 	box-shadow: 1px 1px 5px 1px #ccc;
 }
-.atas .menu {
+.atas nav {
 	margin-right: 5%;
+}
+.atas nav a {
+	text-decoration: none;
+	color: #4caf50;
 	font-family: OBold;
 	font-size: 20px;
 }
-.menu a {
+#profil { color: #454545; }
+#profil > i {
 	color: #4caf50;
-	text-decoration: none;
+	font-size: 25px;
+	cursor: pointer;
+}
+#profil #subProfil {
+	position: fixed;
+	top: 49px;right: 0px;
+	top: -90%;
+	width: 15%;
+	background-color: #fff;
+	z-index: 1;
+	border: 1px solid #ddd;
+	border-top: none;
+	transition: 0.5s;
+}
+#profil:hover #subProfil { top: 49px; }
+#subProfil #icon {
+	display: inline-block;
+	width: 40px;
+}
+#subProfil li {
+	list-style: none;
+	font-family: OSans;
+	font-size: 18px;
 }
 .judul {
 	float: left;

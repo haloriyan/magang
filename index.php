@@ -1,9 +1,15 @@
+<?php
+include 'aksi/ctrl/siswa.php';
+
+// Detail siswa
+$sesi = $siswa->sesi();
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale = 1">
-	<title>Hello Embo!</title>
+	<title>lowMAGZ</title>
 	<link href="aset/fw/build/fw.css" rel="stylesheet">
 	<link href="aset/fw/build/font-awesome.min.css" rel="stylesheet">
 	<link href="aset/css/style.index.css" rel="stylesheet">
@@ -12,9 +18,24 @@
 
 <div class="atas">
 	<h1 class="judul">lowMAGZ</h1>
-	<div class="menu ke-kanan">
-		<a href="./auth">SIGN IN</a>
-	</div>
+	<nav class="ke-kanan">
+		<?php
+		if(empty($sesi)) {
+			echo "<a href='../auth'>SIGN IN</a>";
+		}else {
+			?>
+			<div id="profil">
+				<i class="fa fa-user"></i>
+				<ul id="subProfil">
+					<a href="./pengaturan"><li><div id="icon"><i class="fa fa-cog"></i></div> Pengaturan</li></a>
+					<a href="./pengaturan"><li><div id="icon"><i class="fa fa-cog"></i></div> Pengaturan</li></a>
+					<a href="./keluar"><li><div id="icon"><i class="fa fa-sign-out"></i></div> Sign out</li></a>
+				</ul>
+			</div>
+			<?php
+		}
+		?>
+	</nav>
 </div>
 
 <div class="container">

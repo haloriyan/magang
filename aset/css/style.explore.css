@@ -1,0 +1,62 @@
+.atas {
+	position: fixed;
+	top: 0px;left: 0px;right: 0px;
+	line-height: 65px;
+	z-index: 1;
+	background-color: #fff;
+	box-shadow: 1px 1px 5px 1px #ddd;
+}
+.judul {
+	float: left;
+	margin: 0;
+	margin-left: 5%;
+	font-size: 22px;
+	font-family: OBold;
+	width: 15%;
+}
+.atas #pencarian {
+	float: left;
+	width: 59%;
+}
+#pencarian .box {
+	width: 50%;
+	border: 1px solid #ddd;
+	font-size: 16px;
+	height: 40px;
+}
+#pencarian #cari {
+	background: none;
+	border: none;
+	margin-left: -40px;
+	font-size: 18px;
+	color: #444;
+}
+
+.filter {
+	position: fixed;
+	top: 120px;left: 5%;
+	width: 25%;
+	box-shadow: 1px 1px 5px 1px #ddd;
+	border-radius: 6px;
+	background-color: #fff;
+	color: #666;
+}
+.filter .wrap { margin: 4% 10% 6% 10%; }
+.filter .box {
+	font-size: 16px;
+	height: 42px;
+}
+.filter .isi { margin-bottom: 5px;margin-top: 10px; }
+.filter h3 { font-family: OBold; }
+
+.container {
+	position: absolute;
+	top: 100px;left: 30%;right: 0%;
+}
+.list {
+	box-shadow: 1px 1px 5px 1px #ddd;
+	padding: 1px;
+	color: #666;
+	margin-bottom: 30px;
+}
+.list p { color: #999; }

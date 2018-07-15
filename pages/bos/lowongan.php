@@ -33,52 +33,64 @@ $sesi = $bos->sesi();
 	<div class="bagian">
 		<div class="wrap">
 			<h3><div id="icon" class="hijau-3"><i class="fa fa-briefcase"></i></div> Lowongan saya</h3>
-			<div id="loadLowongan">
-				<table>
-					<thead>
-						<tr>
-							<th>Job Title</th>
-							<th>Salary</th>
-							<th>Durasi</th>
-							<th style="width: 10%"></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Ngoding nggawe web</td>
-							<td>Rp 100.000</td>
-							<td>3 bulan</td>
-							<td>
-								<button class="merah"><i class="fa fa-trash"></i></button>
-							</td>
-						</tr>
-						<tr>
-							<td>Ngoding nggawe web</td>
-							<td>Rp 100.000</td>
-							<td>3 bulan</td>
-							<td>
-								<button class="merah"><i class="fa fa-trash"></i></button>
-							</td>
-						</tr>
-						<tr>
-							<td>Ngoding nggawe web</td>
-							<td>Rp 100.000</td>
-							<td>3 bulan</td>
-							<td>
-								<button class="merah"><i class="fa fa-trash"></i></button>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+			<div id="loadLowongan"></div>
+		</div>
+	</div>
+</div>
+
+<div class="bg"></div>
+<div class="popupWrapper" id="popupHapus">
+	<div class="popup">
+		<div class="wrap">
+			<h3>Hapus Lowongan
+				<div id="xHapus" class="ke-kanan"><i class="fa fa-close"></i></div>
+			</h3>
+			<form id="formHapus">
+				<input type="hidden" id="idlowongan">
+				<p>Yakin ingin menghapus lowongan <b><span id="namaLowongan"></span></b></p>
+				<div class="bag-tombol">
+					<button class="merah">Ya, hapus lowongan ini</button>
+				</div>
+			</form>
 		</div>
 	</div>
 </div>
 
 <script src="../aset/js/embo.js"></script>
 <script>
+	function loadLowongan() {
+		ambil("../aksi/lowongan/load.php", function(res) {
+			tulis("#loadLowongan", res)
+		})
+	}
+	loadLowongan()
 	klik("#cta", function() {
 		mengarahkan("./add")
+	})
+
+	function hapus(val) {
+		let low = val.split("[[pisah]]")
+		let idlow = low[0]
+		let namaLow = low[1]
+		munculPopup("#popupHapus", pengaya("#popupHapus", "top: 190px"))
+		tulis("#namaLowongan", namaLow)
+		pilih("#idlowongan").value = idlow
+	}
+
+	submit("#formHapus", function() {
+		let id = pilih("#idlowongan").value
+		let del = "id="+id
+		pos("../aksi/lowongan/delete.php", del, function() {
+			hilangPopup("#popupHapus")
+			loadLowongan()
+		})
+	})
+
+	tekan("Escape", function() {
+		hilangPopup("#popupHapus")
+	})
+	klik("#xHapus", function() {
+		hilangPopup("#popupHapus")
 	})
 </script>
 </body>

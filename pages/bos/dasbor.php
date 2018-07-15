@@ -1,6 +1,9 @@
 <?php
 include 'aksi/ctrl/bos.php';
 $sesi = $bos->sesi();
+$idbos = $bos->saya($sesi, "idbos");
+
+$totLowongan = $ctrl->hitung($ctrl->tabel("lowongan")->pilih()->dimana(["idbos" => $idbos])->eksekusi());
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,9 +36,9 @@ $sesi = $bos->sesi();
 	<div class="bagian">
 		<div class="wrap">
 			<h3><div id="icon" class="hijau-3"><i class="fa fa-home"></i></div> Dashboard</h3>
-			<div class="card hijau-3">
+			<div class="card hijau-3" id="keLowongan">
 				<div class="wrap">
-					<span id="totLowongan">5</span> Lowongan &nbsp; <i class="fa fa-arrow-right"></i>
+					<span id="totLowongan"><?php echo $totLowongan; ?></span> Lowongan &nbsp; <i class="fa fa-arrow-right"></i>
 				</div>
 			</div>
 			<div class="card hijau-3">
@@ -51,6 +54,9 @@ $sesi = $bos->sesi();
 <script>
 	klik("#cta", function() {
 		mengarahkan("./add")
+	})
+	klik("#keLowongan", function() {
+		mengarahkan("./lowongan")
 	})
 </script>
 </body>
