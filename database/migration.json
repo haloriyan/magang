@@ -1,0 +1,66 @@
+{
+	"tabel": {
+		"siswa": [
+			"idsiswa int(11)",
+			"nama varchar(55)",
+			"email varchar(155)",
+			"password varchar(55)",
+			"foto varchar(155)",
+			"sekolah varchar(50)",
+			"alamat varchar(255)",
+			"gender varchar(15)",
+			"status int(1)",
+			"registered int(11)"
+		],
+		"portfolio": [
+			"idportfolio int(11)",
+			"idsiswa int(11)",
+			"title varchar(125)",
+			"description text",
+			"attachment varchar(155)",
+			"url varchar(255)",
+			"added int(11)"
+		],
+		"bos": [
+			"idbos int(11)",
+			"nama varchar(55)",
+			"email varchar(155)",
+			"password varchar(55)",
+			"alamat varchar(255)",
+			"foto varchar(255)",
+			"status int(1)",
+			"registered int(11)"
+		],
+		"lowongan": [
+			"idlowongan int(11)",
+			"idbos int(11)",
+			"title varchar(55)",
+			"description text",
+			"image varchar(155)",
+			"salary int(15)",
+			"durasi int(2)",
+			"added int(11)"
+		],
+		"aplikasi": [
+			"idaplikasi int(11)",
+			"idlowongan int(11)",
+			"idsiswa int(11)",
+			"note text",
+			"added int(11)"
+		]
+	},
+	"atribut": {
+		"primary key": [
+			"siswa.idsiswa",
+			"portfolio.idportfolio",
+			"bos.idbos",
+			"lowongan.idlowongan",
+			"aplikasi.idaplikasi"
+		],
+		"unique key": [
+			"siswa.email",
+			"bos.email"
+		]
+		
+	}
+}

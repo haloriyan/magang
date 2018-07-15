@@ -1,0 +1,88 @@
+body { background-color: #ecf0f1; }
+.atas {
+	position: fixed;
+	top: 0px;left: 0px;right: 0px;
+	line-height: 70px;
+	z-index: 1;
+}
+.judul {
+	margin: 0;
+	font-size: 22px;
+	font-family: OBold;
+	margin-left: 5%;
+}
+.atas button {
+	background-color: #fff;
+	color: #4caf50;
+	font-size: 16px;
+	position: relative;
+	top: -3px;
+}
+
+.menu {
+	position: absolute;
+	top: 120px;left: 5%;
+	width: 25%;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+}
+.menu a {
+	text-decoration: none;
+	color: #454545;
+}
+.menu #icon {
+	display: inline-block;
+	width: 30px;
+}
+.menu li {
+	list-style: none;
+	line-height: 70px;
+	padding: 1px 25px;
+	font-size: 18px;
+	font-family: OLight;
+}
+.menu li[aktif=ya] {
+	background-color: #4caf50;
+	color: #fff;
+}
+
+.container {
+	position: absolute;
+	top: 120px;left: 35%;right: 5%;
+}
+.container .bagian {
+	background-color: #fff;
+	color: #454545;
+	border-radius: 6px;
+	border: 1px solid #ddd;
+	margin-bottom: 35px;
+}
+.bagian #icon {
+	display: inline-block;
+	width: 40px;
+	line-height: 40px;
+	border-radius: 90px;
+	text-align: center;
+	margin-right: 25px;
+}
+
+.card {
+	display: inline-block;
+	width: 31%;
+	border-radius: 5px;
+	padding-top: 25px;
+	padding-bottom: 28px;
+	margin: 1px 10px;
+	cursor: pointer;
+}
+.card .wrap {
+	margin-left: 15%;
+	margin-right: 15%;
+	font-size: 20px;
+	font-family: OLight;
+	cz
+}
+.card:nth-child(2) { margin-left: 0px; }
+
+.popup { border-radius: 6px; }

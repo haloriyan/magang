@@ -1,0 +1,58 @@
+body {
+	color: #444;
+}
+.atas {
+	position: fixed;
+	top: 0px;left: 0px;right: 0px;
+	line-height: 70px;
+	background-color: #fff;
+	box-shadow: 1px 1px 5px 1px #ccc;
+}
+.atas .menu {
+	margin-right: 5%;
+	font-family: OBold;
+	font-size: 20px;
+}
+.menu a {
+	color: #4caf50;
+	text-decoration: none;
+}
+.judul {
+	float: left;
+	margin: 0;
+	margin-left: 5%;
+	font-size: 22px;
+	font-family: OBold;
+}
+.container {
+	position: absolute;
+	top: 120px;left: 0px;right: 0px;
+}
+.container .wrap {
+	width: 45%;
+}
+.container h2 {
+	font-size: 35px;
+	line-height: 70px;
+	font-family: OLight;
+}
+#formCari .box {
+	width: 75%;
+	font-size: 16px;
+	height: 43px;
+}
+#formCari #cari {
+	position: relative;
+	top: 0px;left: -10px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+.container .opt {
+	margin-top: 25px;
+	color: #999;
+}
+.opt a {
+	color: #4caf50;
+	text-decoration: none;
+}
