@@ -24,7 +24,7 @@ if(empty($sesi)) {
 <div class="konten konten-80 container">
 	<h1>Halo <b>Riyan</b>!</h1>
 	<form id="formCari">
-		<input type="text" class="box" placeholder="Cari lowongan...">
+		<input type="text" class="box" placeholder="Cari lowongan..." id="q">
 		<button id="cari" class="tbl hijau-3"><i class="fa fa-search"></i></button>
 	</form>
 	<div class="rata-tengah">

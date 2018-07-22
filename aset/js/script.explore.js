@@ -26,3 +26,14 @@ function urutkan(val) {
 		loadLowongan()
 	})
 }
+
+klik("#profil", () => {
+	let aksi = pilih("#profil").getAttribute("aksi")
+	if(aksi == "bkMenu") {
+		pengaya(".menu", "right: 0%")
+		pilih("#profil").setAttribute("aksi", "xMenu")
+	}else {
+		pengaya(".menu", "right: -50%")
+		pilih("#profil").setAttribute("aksi", "bkMenu")
+	}
+})

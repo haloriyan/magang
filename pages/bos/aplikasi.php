@@ -1,6 +1,7 @@
 <?php
-include 'aksi/ctrl/bos.php';
+include 'aksi/ctrl/aplikasi.php';
 $sesi = $bos->sesi();
+$idbos = $bos->saya($sesi, "idbos");
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,14 +35,19 @@ $sesi = $bos->sesi();
 	<div class="bagian">
 		<div class="wrap">
 			<h3><div id="icon" class="hijau-3"><i class="fa fa-user"></i></div> Aplikasi Lamaran
-				<select class="box ke-kanan" id="project">
+				<select class="box ke-kanan" id="project" onchange="project(this.value)">
 					<option value="">Pilih project...</option>
-					<option>Ngoding nggawe web</option>
-					<option>Ngoding nggawe vscode</option>
+					<?php
+					foreach ($lowongan->my($idbos) as $row) {
+						echo "<option value='".$row['idlowongan']."'>".$row['title']."</option>";
+					}
+					?>
 				</select>
 			</h3>
 			<br />
 			<div id="loadPelamar">
+				Pilih proyek untuk melihat pelamar
+				<!--
 				<div class="card rata-tengah">
 					<div class="wrap">
 						<li onclick="detail()">
@@ -52,6 +58,7 @@ $sesi = $bos->sesi();
 						<button onclick="tolak()" class="tbl merah"><i class="fa fa-close"></i></button>
 					</div>
 				</div>
+				-->
 			</div>
 		</div>
 	</div>
@@ -89,6 +96,19 @@ $sesi = $bos->sesi();
 	klik("#cta", function() {
 		mengarahkan("./add")
 	})
+	function load() {
+		ambil("../aksi/aplikasi/all.php", function(res) {
+			tulis("#loadPelamar", res)
+		})
+	}
+
+	function project(val) {
+		let set = "namakuki=idlowongan&value="+val+"&durasi=3655"
+		pos("../aksi/setCookie.php", set, function() {
+			load()
+		})
+	}
+
 	function cawang() {
 		alert('hai')
 	}

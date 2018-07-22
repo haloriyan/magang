@@ -3,6 +3,10 @@ include '../ctrl/lowongan.php';
 
 $idbos = $bos->saya($bos->sesi(), "idbos");
 
+function toIdr($angka) {
+	return 'Rp '.strrev(implode('.', str_split(strrev(strval($angka)), 3)));
+}
+
 $lowSaya = $lowongan->my($idbos);
 if($lowSaya == "null") {
 	echo "Anda tidak memiliki lowongan. <a href='./add'>buat lowongan</a> baru";
@@ -23,7 +27,7 @@ if($lowSaya == "null") {
 			echo "<tr>".
 					"<td>".$row['title']."</td>".
 					"<td>".$row['category']."</td>".
-					"<td>".$row['salary']."</td>".
+					"<td>".toIdr($row['salary'])."</td>".
 					"<td>".
 						"<button class='merah' onclick='hapus(this.value)' value='".$row['idlowongan']."[[pisah]]".$row['title']."'><i class='fa fa-trash'></i></button>".
 					"</td>".

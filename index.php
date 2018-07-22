@@ -21,24 +21,23 @@ $sesi = $siswa->sesi();
 	<nav class="ke-kanan">
 		<?php
 		if(empty($sesi)) {
-			echo "<a href='../auth'>SIGN IN</a>";
+			echo "<a href='./auth'>SIGN IN</a>";
 		}else {
 			?>
-			<div id="profil">
-				<i class="fa fa-user"></i>
-				<ul id="subProfil">
-					<a href="./pengaturan"><li><div id="icon"><i class="fa fa-cog"></i></div> Pengaturan</li></a>
-					<a href="./pengaturan"><li><div id="icon"><i class="fa fa-cog"></i></div> Pengaturan</li></a>
-					<a href="./keluar"><li><div id="icon"><i class="fa fa-sign-out"></i></div> Sign out</li></a>
-				</ul>
-			</div>
+			<div id="profil" class="ke-kanan" aksi="bkMenu"><i class="fa fa-bars"></i></div>
 			<?php
 		}
 		?>
 	</nav>
 </div>
 
-<div class="container">
+<div class="menu">
+	<a href="./aplikasi-saya"><li><div id="icon"><i class="fa fa-briefcase"></i></div> Aplikasi saya</li></a>
+	<a href="./pengaturan"><li><div id="icon"><i class="fa fa-cog"></i></div> Pengaturan</li></a>
+	<a href="./keluar"><li><div id="icon"><i class="fa fa-sign-out"></i></div> Sign out</li></a>
+</div>
+
+<div class="containerIndex">
 	<div class="wrap">
 		<h2>Cari magang tanpa tegang mulai sekarang!</h2>
 		<form id="formCari">
@@ -53,7 +52,16 @@ $sesi = $siswa->sesi();
 
 <script src="aset/js/embo.js"></script>
 <script>
-	
+	klik("#profil", () => {
+		let aksi = pilih("#profil").getAttribute("aksi")
+		if(aksi == "bkMenu") {
+			pengaya(".menu", "right: 0%")
+			pilih("#profil").setAttribute("aksi", "xMenu")
+		}else {
+			pengaya(".menu", "right: -50%")
+			pilih("#profil").setAttribute("aksi", "bkMenu")
+		}
+	})
 </script>
 </body>
 </html>

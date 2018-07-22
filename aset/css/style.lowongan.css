@@ -1,3 +1,7 @@
+a {
+	color: #4caf50;
+	text-decoration: none;
+}
 .atas {
 	position: fixed;
 	top: 0px;left: 0px;right: 0px;
@@ -62,7 +66,7 @@
 	cursor: pointer;
 }
 #profil img {
-	width: 80px;
-	height: 80px;
+	width: 120px;
+	height: 120px;
 	border-radius: 125px;
 }
